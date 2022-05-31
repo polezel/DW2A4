@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+
+
+:root {
+    --height-margin: 2rem;
+    --view-height: calc(100vh - 2 * var(--height-margin));
+    --view-width: calc(100vw - 2 * var(--width-margin));
+    --width-margin: 2rem
+}
+
+body {
+    background-color: #F5F9F8;
+    background-image: url(../image/bg.jpg);
+    background-size: cover;
+    font-family: 'Lato', sans-serif;
+    margin: 0
+}
+
+#overview {
+    -webkit-box-shadow: 0 0 20px 1px #532d36b3;
+    align-items: center;
+    box-shadow: 0 0 20px 1px #532d33b3;
+    display: flex;
+    flex-flow: row nowrap;
+    height: var(--view-height);
+    justify-content: center;
+    margin: var(--width-margin) var(--height-margin);
+    width: var(--view-width);
+    word-wrap: break-word
+}
+
+#find {
+    align-items: center;
+    background-image: radial-gradient(circle, #e994aecd 1%, #e56898a8 55%, #df2677ca 93%);
+    color: #fff;
+    display: flex;
+    flex: auto;
+    flex-flow: column nowrap;
+    font-size: calc((3vw + 3vh) * .5);
+    height: 100%;
+    justify-content: space-around;
+    overflow: auto
+}
+
+#cep-find, #find>h1 {
+    text-align: center;
+    width: 90%
+}
+
+#cep {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #421d2e;
+    border: 1px solid #424242;
+    border-radius: .6rem;
+    color: #fff;
+    font-size: calc((3vw + 3vh) * .5);
+    padding: .4rem;
+    text-align: center;
+    width: 24vw
+}
+
+#cep:focus {
+    -webkit-box-shadow: 0 0 20px 1px #b5103f;
+    box-shadow: 0 0 20px 1px #f0bdcc;
+    outline: none
+}
+
+#cep-error {
+    display: block;
+    font-size: 1.5vw;
+    padding: 10px
+}
+
+#results {
+    align-items: center;
+    backdrop-filter: blur(6px);
+    background-color: #f9f5f6b6;
+    border: 1rem;
+    display: flex;
+    flex: auto;
+    font-size: calc((3vw + 3vh) * .5);
+    height: calc(100% - 2* 1rem);
+    justify-content: center;
+    overflow: auto;
+    padding: 1rem
+}
+
+#result {
+    font-size: calc((3vw + 3vh) * .5)
+}
+
+#result>caption {
+    font-size: 3.2vw;
+    font-weight: 700
+}
+
+#city, #state, #death, #cases, #suspects, #refuses, #datetime {
+    text-align: right
+}
+
+@media screen and (max-width: 768px) {
+    #overview {
+        flex-flow: column nowrap
+    }
+
+    #find {
+        flex: auto;
+        width: 100%
+    }
+
+    #results {
+        flex: auto;
+        width: calc(100% - 2* 1rem)
+    }
+}
+
+@page {
+    size: A4
+}
+
+@media print {
+    .no-print, .no-print * {
+        display: none !important
+    }
+
+    #overview {
+        -webkit-box-shadow: none !important;
+        background-color: #fff !important;
+        box-shadow: none !important;
+        flex-flow: column nowrap
+    }
+
+    #results {
+        align-items: flex-start;
+        align-self: flex-start;
+        width: calc(100% - 2* 1rem)
+    }
+}
